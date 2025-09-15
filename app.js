@@ -15,6 +15,10 @@ app.use(cors());
 app.use("/api", routes);
 
 app.listen(PORT, async () => {
-  await connectDB();
-  console.log(`Servidor operativo en el puerto ${PORT}`);
+  try {
+    await connectDB();
+    console.log(`Servidor operativo en https://localhost:${PORT}`);
+  } catch (error) {
+    console.log("Error al conectar con MongoDB", error);
+  }
 });
