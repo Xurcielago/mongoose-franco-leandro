@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/Alumnos");
+    await mongoose.connect("mongodb://127.0.0.1:27017/ww2navy");
 
     // await mongoose.connection.dropDatabase();
     // Borra toda la base de datos
