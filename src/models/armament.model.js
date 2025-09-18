@@ -10,14 +10,14 @@ export const ArmamentSchema = new Schema(
 
     type: {
       type: String,
-      enum: ["aa_gun", "artillery", "aircraft", "self-propelled"],
+      enum: ["aa-gun", "artillery", "aircraft", "self-propelled"],
       required: true,
     },
 
     barrel: {
-      type: String,
+      type: String, 
       enum: ["single", "twin", "triple", "quadruple"],
-      required: false
+      required: false // Opcional
     },
   },
   
@@ -26,4 +26,4 @@ export const ArmamentSchema = new Schema(
   }
 );
 
-export const ArmamentSchemaModel = model("Armament", ArmamentSchema);
+export const ArmamentModel = model("Armament", ArmamentSchema);

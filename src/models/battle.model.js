@@ -11,7 +11,6 @@ export const BattleSchema = new Schema(
     belligerents: [
       {
         name: String,
-        required: true,
       }
     ],
 

@@ -14,41 +14,40 @@ export const WarshipSchema = new Schema(
       required: true,
     },
 
-    builder: [
-      {
-        name: String,
-        required: false //opcional
-      }
-    ],
+    builder: {
+        type: String,
+        // Opcional
+    },
 
     armoured_parts: [
-    {
-      ship_part: {
-        type: String,
-        enum: ["deck", "turret", "side"],
-        required: true,
+      {
+        _id: false,
+        ship_part: {
+          type: String,
+          enum: ["deck", "turret", "side"],
+          required: true,
+        },
+        thickness: {
+          type: String,
+          required: true,
+        },
       },
-      thickness: {
-        type: Number,
-        required: true,
-      }
-    }],
+    ],
 
     armaments: [
       {
+        _id: false,
         amount: {
-          amount: Number,
+          type: Number,
           required: true,
         },
         weapon: {
           type: Types.ObjectId,
-          ref: "weapon",
+          ref: "Armament",
           required: true,
         },
       }
     ],
-  
-  
   },
   
   {
